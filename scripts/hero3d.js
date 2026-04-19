@@ -1,13 +1,14 @@
+import * as THREE from 'three';
+
 /* =========================================================
    HERO 3D BACKGROUND
    Simple but interactive — an ambient field of floating
    metallic/glass shards that respond to the cursor.
-   Uses Three.js r160 via CDN (loaded in the page).
 ========================================================= */
 
 (function () {
   const canvas = document.getElementById('hero-canvas');
-  if (!canvas || typeof THREE === 'undefined') return;
+  if (!canvas) return;
 
   const scene = new THREE.Scene();
   scene.fog = new THREE.FogExp2(0x0e0e0e, 0.055);

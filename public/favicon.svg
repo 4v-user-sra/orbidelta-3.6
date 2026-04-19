@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="f1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4a1a15"/><stop offset="100%" stop-color="#2a0d08"/></linearGradient>
+    <linearGradient id="f2" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#5c2016"/><stop offset="100%" stop-color="#2d0b06"/></linearGradient>
+    <linearGradient id="f3" x1="50%" y1="0%" x2="50%" y2="100%"><stop offset="0%" stop-color="#73271a"/><stop offset="100%" stop-color="#3c1209"/></linearGradient>
+    <linearGradient id="f4" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#601e14"/><stop offset="100%" stop-color="#1f0603"/></linearGradient>
+    <linearGradient id="f5" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#8a2d1d"/><stop offset="100%" stop-color="#4a160c"/></linearGradient>
+    <linearGradient id="f6" x1="100%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#46160f"/><stop offset="100%" stop-color="#140402"/></linearGradient>
+    
+    <style>
+      .edge { stroke: #c8815f; stroke-width: 1.2; stroke-linejoin: round; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <g transform="translate(50,50) scale(1.1) translate(-50,-50)">
+    <!-- Outer rim to ensure no bleeding background -->
+    <polygon points="50,5 88,20 98,58 75,90 25,90 2,58 12,20" fill="#1a0402" />
+
+    <!-- Isometric projection of icosahedron vertices -->
+    <path class="edge" fill="url(#f3)" d="M50,5 L88,20 L65,45 Z" />
+    <path class="edge" fill="url(#f1)" d="M50,5 L65,45 L35,45 Z" />
+    <path class="edge" fill="url(#f2)" d="M50,5 L35,45 L12,20 Z" />
+    
+    <path class="edge" fill="url(#f4)" d="M88,20 L98,58 L65,45 Z" />
+    <path class="edge" fill="url(#f6)" d="M12,20 L35,45 L2,58 Z" />
+
+    <path class="edge" fill="url(#f2)" d="M65,45 L98,58 L80,80 Z" />
+    <path class="edge" fill="url(#f5)" d="M65,45 L80,80 L50,65 Z" />
+    <path class="edge" fill="url(#f1)" d="M65,45 L50,65 L35,45 Z" />
+    <path class="edge" fill="url(#f3)" d="M35,45 L50,65 L20,80 Z" />
+    <path class="edge" fill="url(#f4)" d="M35,45 L20,80 L2,58 Z" />
+
+    <path class="edge" fill="url(#f6)" d="M98,58 L75,90 L80,80 Z" />
+    <path class="edge" fill="url(#f3)" d="M80,80 L75,90 L50,95 Z" />
+    <path class="edge" fill="url(#f2)" d="M80,80 L50,95 L50,65 Z" />
+    <path class="edge" fill="url(#f4)" d="M50,65 L50,95 L20,80 Z" />
+    <path class="edge" fill="url(#f1)" d="M20,80 L50,95 L25,90 Z" />
+    <path class="edge" fill="url(#f5)" d="M2,58 L20,80 L25,90 Z" />
+  </g>
+</svg>
