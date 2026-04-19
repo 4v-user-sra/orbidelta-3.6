@@ -161,13 +161,9 @@ let currentLang = 'en';
 
 function setLanguage(lang) {
   if (currentLang === lang && document.body.dataset.langSet) return;
+  const isInitialLoad = !document.body.dataset.langSet;
   currentLang = lang;
   document.body.dataset.langSet = true;
-  
-  // Start soft fade animation for the page
-  const wrapper = document.getElementById('page-content') || document.body;
-  wrapper.style.transition = 'opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
-  wrapper.style.opacity = '0';
   
   // Update buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -178,6 +174,22 @@ function setLanguage(lang) {
     }
   });
 
+  if (isInitialLoad) {
+    // Initial load: inject text immediately without fading
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if(translations[lang][key]) {
+        el.innerHTML = translations[lang][key];
+      }
+    });
+    return;
+  }
+  
+  // Subsequent loads: fade animation for language switch
+  const wrapper = document.getElementById('page-content') || document.body;
+  wrapper.style.transition = 'opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
+  wrapper.style.opacity = '0';
+
   setTimeout(() => {
     // Update text
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -186,10 +198,6 @@ function setLanguage(lang) {
         el.innerHTML = translations[lang][key];
       }
     });
-
-    // Re-initialize any counters or reveal elements if necessary
-    if (typeof window.initCounters === 'function') window.initCounters();
-    document.querySelectorAll('.reveal, .reveal-img').forEach(el => el.classList.add('in'));
 
     // Fade back in
     wrapper.style.opacity = '1';
