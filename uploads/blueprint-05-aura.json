@@ -1,0 +1,366 @@
+{
+  "meta": {
+    "source": "https://auraurbanretreat.com/",
+    "site_type": "Luxury Hospitality / Spa / Wellness Retreat",
+    "overall_style": "Warm organic luxury with earth tones, elegant serif typography, cinematic fullscreen imagery, and slow graceful animations. Sensory and aspirational.",
+    "signature_patterns": ["Fullscreen cinematic hero imagery", "Slow elegant scroll reveals", "Serif-dominant typography with gold accents", "Parallax layered sections", "Ambient color palette transitions between sections"]
+  },
+
+  "design_system": {
+    "typography": {
+      "primary_font": {
+        "family": "Cormorant Garamond / Playfair Display / custom elegant serif",
+        "weights": [300, 400, 500, 600],
+        "usage": "Headlines, section titles, pull quotes, hero text"
+      },
+      "secondary_font": {
+        "family": "Jost / Montserrat / clean modern sans-serif",
+        "weights": [300, 400, 500],
+        "usage": "Body text, nav, captions, UI elements"
+      },
+      "scale": {
+        "hero_headline": { "size": "clamp(3rem, 6vw, 5.5rem)", "line_height": "1.05", "letter_spacing": "-0.01em", "weight": 300, "font_style": "normal or italic for emphasis words" },
+        "section_title": { "size": "clamp(2rem, 4vw, 3.5rem)", "line_height": "1.1", "letter_spacing": "0em", "weight": 400 },
+        "subtitle": { "size": "clamp(1.125rem, 1.5vw, 1.375rem)", "line_height": "1.5", "weight": 300, "font_style": "italic" },
+        "body": { "size": "1rem", "line_height": "1.8", "weight": 300, "letter_spacing": "0.01em" },
+        "caption": { "size": "0.6875rem", "letter_spacing": "0.15em", "text_transform": "uppercase", "weight": 500, "font_family": "secondary (sans-serif)" },
+        "nav_link": { "size": "0.75rem", "letter_spacing": "0.12em", "text_transform": "uppercase", "weight": 400, "font_family": "secondary" }
+      },
+      "strategy": "Serif-forward for luxury and elegance. Light weight (300) for refinement. Sans-serif only for utility/navigation/captions — always uppercase with wide letter-spacing to feel curated. Italic serif for emotional moments."
+    },
+
+    "color_palette": {
+      "background": {
+        "primary": "#F6F1EB",
+        "secondary": "#EDE6DC",
+        "cream": "#FAF7F2",
+        "dark": "#2C2622",
+        "dark_surface": "#3A3430"
+      },
+      "text": {
+        "primary": "#2C2622",
+        "secondary": "#6B5E52",
+        "muted": "#A0937E",
+        "on_dark": "#F6F1EB",
+        "on_dark_secondary": "rgba(246,241,235,0.6)"
+      },
+      "accent": {
+        "gold": "#C5A572",
+        "gold_light": "#D4BA8A",
+        "gold_dark": "#A6894A",
+        "olive": "#7A8060",
+        "terracotta": "#C07850",
+        "gradient_gold": "linear-gradient(135deg, #C5A572 0%, #D4BA8A 50%, #C5A572 100%)"
+      },
+      "overlay": {
+        "dark": "rgba(44,38,34,0.4)",
+        "warm": "rgba(44,38,34,0.25)",
+        "gradient_hero": "linear-gradient(180deg, rgba(44,38,34,0.1) 0%, rgba(44,38,34,0.5) 100%)"
+      },
+      "strategy": "Warm earthy palette — cream/sand backgrounds, dark espresso text, gold as luxury accent. No cold colors. Everything warm. This palette evokes spa/natural/premium."
+    },
+
+    "spacing": {
+      "base_unit": "8px",
+      "scale": {
+        "xs": "4px", "sm": "8px", "md": "16px", "lg": "24px", "xl": "40px",
+        "2xl": "56px", "3xl": "80px", "4xl": "120px", "5xl": "160px",
+        "section_gap": "clamp(80px, 12vh, 160px)"
+      },
+      "container": { "max_width": "1200px", "padding_x": "clamp(24px, 5vw, 80px)" },
+      "strategy": "Luxurious breathing room. Content never feels cramped. Wide margins create exclusivity."
+    },
+
+    "grid": {
+      "type": "CSS Grid with generous gutters",
+      "columns": 12,
+      "gutter": "32px",
+      "common_layouts": {
+        "hero": "fullscreen image/video with centered text overlay",
+        "about": "2-col (text 5col + image 6col) with image overlapping section boundary",
+        "services": "3-col cards with image + text",
+        "gallery": "masonry or asymmetric grid with varied sizes",
+        "testimonial": "centered single column, max-width 700px",
+        "cta_banner": "fullscreen image with overlay + centered text"
+      }
+    }
+  },
+
+  "ui_components": {
+    "buttons": {
+      "primary": {
+        "background": "#C5A572",
+        "color": "#FFFFFF",
+        "padding": "16px 40px",
+        "border_radius": "0 (sharp/square for luxury) or 2px",
+        "font_size": "0.6875rem",
+        "font_weight": 500,
+        "letter_spacing": "0.15em",
+        "text_transform": "uppercase",
+        "font_family": "secondary (sans-serif)",
+        "transition": "all 0.4s ease",
+        "hover": { "background": "#A6894A", "transform": "none — luxury buttons don't bounce" }
+      },
+      "outline": {
+        "background": "transparent",
+        "color": "#C5A572",
+        "border": "1px solid #C5A572",
+        "padding": "16px 40px",
+        "border_radius": "0",
+        "letter_spacing": "0.15em",
+        "text_transform": "uppercase",
+        "hover": { "background": "#C5A572", "color": "#FFFFFF" }
+      },
+      "dark_variant": {
+        "background": "transparent",
+        "color": "#F6F1EB",
+        "border": "1px solid rgba(246,241,235,0.3)",
+        "hover": { "border_color": "#C5A572", "color": "#C5A572" }
+      },
+      "text_link": {
+        "color": "#C5A572",
+        "letter_spacing": "0.1em",
+        "text_transform": "uppercase",
+        "font_size": "0.6875rem",
+        "underline_on_hover": "1px solid #C5A572, expanding from center"
+      }
+    },
+
+    "cards": {
+      "service_card": {
+        "background": "#FFFFFF",
+        "border": "none",
+        "border_radius": "0 or 4px",
+        "overflow": "hidden",
+        "box_shadow": "0 4px 20px rgba(44,38,34,0.06)",
+        "image": { "aspect_ratio": "3/4 or 4/5 (portrait for spa feel)", "object_fit": "cover" },
+        "content_padding": "28px 24px",
+        "hover": {
+          "box_shadow": "0 12px 32px rgba(44,38,34,0.1)",
+          "image_scale": "1.04 over 0.8s",
+          "transition": "all 0.6s cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      },
+      "testimonial_card": {
+        "layout": "centered text, serif italic quote, sans-serif name below",
+        "quote_marks": "decorative large gold quote mark above text",
+        "font_size": "clamp(1.25rem, 2vw, 1.75rem)",
+        "font_style": "italic",
+        "font_weight": 300,
+        "max_width": "700px"
+      },
+      "room_card": {
+        "image": "full-width, aspect 16/10",
+        "title_overlay": "positioned at bottom with gradient overlay",
+        "price_tag": { "font_family": "secondary", "letter_spacing": "0.05em" }
+      }
+    },
+
+    "navbar": {
+      "position": "fixed",
+      "z_index": 1000,
+      "padding": "20px clamp(24px,5vw,80px)",
+      "background": "transparent initially → rgba(246,241,235,0.95) on scroll",
+      "backdrop_filter": "blur(12px) on scroll",
+      "border_bottom": "none → 1px solid rgba(44,38,34,0.06) on scroll",
+      "transition": "all 0.5s ease",
+      "logo": { "font_family": "serif display", "size": "1.25rem", "letter_spacing": "0.08em", "text_transform": "uppercase" },
+      "links": {
+        "color": "#F6F1EB (on hero, inverts to #2C2622 after scroll)",
+        "font_size": "0.6875rem",
+        "letter_spacing": "0.12em",
+        "text_transform": "uppercase",
+        "font_family": "secondary sans-serif",
+        "hover_color": "#C5A572"
+      },
+      "hamburger_on_mobile": {
+        "style": "two horizontal lines (not three), gold color",
+        "fullscreen_menu": "overlay with large serif links, gold accents"
+      }
+    },
+
+    "forms": {
+      "booking_form": {
+        "style": "elegant, minimal",
+        "input_background": "rgba(255,255,255,0.8)",
+        "border": "1px solid rgba(44,38,34,0.1)",
+        "border_radius": "0",
+        "padding": "16px 20px",
+        "font_family": "secondary sans-serif",
+        "label": { "font_size": "0.6875rem", "letter_spacing": "0.1em", "text_transform": "uppercase", "color": "#A0937E" },
+        "focus": { "border_color": "#C5A572", "box_shadow": "none — clean luxury" }
+      }
+    }
+  },
+
+  "visual_effects": {
+    "glassmorphism": {
+      "navbar_scrolled": { "background": "rgba(246,241,235,0.95)", "backdrop_filter": "blur(12px)" },
+      "usage": "Minimal — only navbar. Luxury prefers opacity and solid colors."
+    },
+    "shadows": {
+      "card": "0 4px 20px rgba(44,38,34,0.06)",
+      "card_hover": "0 12px 32px rgba(44,38,34,0.1)",
+      "hero_text": "0 2px 40px rgba(44,38,34,0.3)",
+      "strategy": "Extremely soft warm shadows. Uses brown-based rgba, not black. This warmth is key."
+    },
+    "glows": {
+      "gold_line": "0 0 20px rgba(197,165,114,0.3)",
+      "usage": "Only on decorative gold elements — dividers, accent lines"
+    },
+    "gradients": {
+      "hero_overlay": "linear-gradient(180deg, rgba(44,38,34,0.1) 0%, rgba(44,38,34,0.5) 100%)",
+      "section_transition": "linear-gradient(180deg, #F6F1EB 0%, #EDE6DC 100%)",
+      "gold_shimmer": "linear-gradient(135deg, #C5A572 0%, #D4BA8A 40%, #C5A572 80%, #D4BA8A 100%)",
+      "image_overlay_warm": "linear-gradient(180deg, transparent 40%, rgba(44,38,34,0.6) 100%)"
+    },
+    "decorative": {
+      "gold_divider": { "width": "60px", "height": "1px", "background": "#C5A572", "margin": "32px auto" },
+      "ornamental_serif": { "content": "decorative serif character (❧ or ✦)", "color": "#C5A572", "size": "1.5rem" }
+    }
+  },
+
+  "motion_system": {
+    "scroll_animations": {
+      "slow_fade_in_up": {
+        "description": "PRIMARY — graceful, unhurried reveals matching luxury pace",
+        "initial": { "opacity": 0, "translateY": "40px" },
+        "final": { "opacity": 1, "translateY": "0" },
+        "duration": "1.0s",
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+        "note": "SLOWER than tech/agency sites — 1.0s vs 0.6-0.8s. Luxury = unhurried."
+      },
+      "image_reveal": {
+        "description": "Images fade in with subtle scale",
+        "initial": { "opacity": 0, "scale": "1.05" },
+        "final": { "opacity": 1, "scale": "1" },
+        "duration": "1.2s",
+        "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+      },
+      "image_clip_reveal": {
+        "description": "Image revealed via clip-path from center or edge",
+        "initial": "clip-path: inset(0 50% 0 50%)",
+        "final": "clip-path: inset(0 0% 0 0%)",
+        "duration": "1.0s",
+        "easing": "cubic-bezier(0.77, 0, 0.175, 1)"
+      },
+      "stagger_text": {
+        "stagger": "0.1s",
+        "per_line": { "opacity": "0→1", "translateY": "30px→0" },
+        "duration": "0.8s"
+      },
+      "parallax_image": {
+        "speed": "0.15-0.25x",
+        "creates": "gentle depth, not dramatic displacement"
+      },
+      "gold_line_draw": {
+        "description": "Decorative gold divider lines draw themselves in",
+        "technique": "width 0→60px or scaleX(0)→scaleX(1)",
+        "duration": "0.8s",
+        "easing": "cubic-bezier(0.77, 0, 0.175, 1)"
+      }
+    },
+
+    "hover_effects": {
+      "image_zoom": { "scale": "1.04", "duration": "0.8s", "easing": "ease" },
+      "button_color": { "bg_darken": true, "no_transform": "luxury buttons stay put" },
+      "link_gold": { "color": "#C5A572", "duration": "0.3s" },
+      "card_shadow_grow": { "shadow_expand": true, "duration": "0.5s" }
+    },
+
+    "page_transitions": {
+      "type": "Slow fade (0.6-0.8s) — no wipes or flashy transitions",
+      "background_during": "#F6F1EB (matches site bg for seamless feel)"
+    },
+
+    "timing_curves": {
+      "default": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+      "reveal": "cubic-bezier(0.77, 0, 0.175, 1)",
+      "gentle": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "primary": "cubic-bezier(0.25, 0.1, 0.25, 1) — gentle and unhurried"
+    }
+  },
+
+  "scroll_behavior": {
+    "parallax": {
+      "hero_image": { "speed": "0.2x", "property": "translateY" },
+      "section_images": { "speed": "0.1-0.15x", "subtle": true },
+      "note": "Gentle parallax only — aggressive parallax feels tech-y, not luxury"
+    },
+    "sticky_elements": {
+      "navbar": "transparent→solid on scroll",
+      "booking_bar": "possible sticky bottom booking CTA on mobile"
+    },
+    "transform_on_scroll": {
+      "hero_text_fade": "opacity 1→0 as scroll progresses, creates 'entering the experience' feel",
+      "section_reveals": "fade-in-up triggers at 20% viewport from bottom"
+    }
+  },
+
+  "media_handling": {
+    "images": {
+      "format": "WebP with high-quality JPG fallback",
+      "quality": "85-90 (higher quality for luxury — visual quality > file size)",
+      "style": "Professional hospitality photography — warm lighting, natural textures, lifestyle shots. Models relaxed, environments serene.",
+      "color_grading": "Warm, slightly elevated shadows, golden hour feel",
+      "border_radius": "0 or 4px — luxury prefers sharp or very subtle",
+      "aspect_ratios": { "hero": "fullscreen or 16/9", "gallery": "mixed (3/4, 4/5, 16/9)", "cards": "3/4 portrait preferred" }
+    },
+    "videos": {
+      "hero_video": "Cinematic slow-motion spa/nature footage, 8-15sec loop",
+      "format": "MP4 with poster frame (high-quality still from video)",
+      "autoplay": true, "muted": true, "loop": true,
+      "overlay": "warm gradient overlay for text readability"
+    },
+    "lazy_loading": { "strategy": "native loading=lazy", "above_fold": "eager load hero + first section images" }
+  },
+
+  "performance": {
+    "optimization_strategies": [
+      "Hero image/video optimized heavily (largest element)",
+      "Use srcset for responsive hero images",
+      "Gentle animations only — no heavy JS computation",
+      "Static site generation for most pages",
+      "High image quality BUT proper compression (WebP at 85%)",
+      "Smooth scroll with moderate lerp (not too laggy)"
+    ]
+  },
+
+  "tech_stack_recommendation": {
+    "frontend": "Next.js or Webflow (common for luxury hospitality)",
+    "animation_libs": ["GSAP ScrollTrigger (subtle usage)", "Lenis smooth scroll", "CSS-only for most reveals"],
+    "styling": "Custom CSS or Tailwind with extensive custom config for brand tokens",
+    "booking": "Third-party booking widget integration (styled to match)"
+  },
+
+  "replication_guidelines": {
+    "dos": [
+      "Use warm earth-tone palette (cream/sand/espresso/gold)",
+      "Choose elegant serif for display, clean sans for utility",
+      "Use uppercase + wide letter-spacing for navigation and labels",
+      "Keep animations SLOW (1.0s+) — luxury = unhurried",
+      "Use fullscreen cinematic hero imagery",
+      "Add subtle gold decorative dividers between sections",
+      "Use portrait aspect ratios (3/4, 4/5) for spa imagery",
+      "Keep border-radius minimal (0-4px)",
+      "Use warm brown-based shadows (rgba of brown, not black)"
+    ],
+    "donts": [
+      "Don't use neon or saturated tech colors",
+      "Don't use bouncy/spring animations — too playful for luxury",
+      "Don't use glassmorphism beyond subtle navbar blur",
+      "Don't use rounded pill buttons — square/minimal for luxury",
+      "Don't over-animate — subtlety IS the animation",
+      "Don't use dark backgrounds for most sections (save for contrast moments)",
+      "Don't skip the serif font — it's the soul of luxury web design"
+    ],
+    "priority_elements": [
+      "1. Fullscreen cinematic hero with warm overlay",
+      "2. Serif typography at elegant scale",
+      "3. Gold accent system (buttons, dividers, hovers)",
+      "4. Slow graceful scroll reveals (1.0s duration)",
+      "5. Warm earth-tone palette throughout",
+      "6. Portrait-oriented imagery with gentle parallax"
+    ]
+  }
+}

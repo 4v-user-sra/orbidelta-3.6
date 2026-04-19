@@ -1,0 +1,300 @@
+/* =========================================================
+   PORTFOLIO MOCKUPS
+   Each .mockup-X is a pure-CSS miniature website rendered
+   inside a film-card. No stock imagery — all composition.
+========================================================= */
+
+/* Common */
+.mockup > * { font-family: var(--font-body); }
+
+/* ---------- MOCKUP 1: Luxury hotel / hospitality ---------- */
+.mockup-hotel {
+  background: linear-gradient(180deg, #1a1512 0%, #0e0a08 100%);
+  position: absolute; inset: 28px 0 0 0;
+  padding: 14px 18px;
+  color: #efe6dc;
+}
+.mockup-hotel .mh-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 6px; letter-spacing: 0.18em; text-transform: uppercase;
+  opacity: 0.65;
+  padding-bottom: 10px;
+}
+.mockup-hotel .mh-nav .logo {
+  font-family: var(--font-display); font-style: italic;
+  font-size: 10px; letter-spacing: 0; opacity: 1;
+}
+.mockup-hotel .mh-nav .links { display: flex; gap: 10px; }
+.mockup-hotel .mh-hero {
+  margin-top: 10px;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 10px;
+  height: calc(100% - 40px);
+}
+.mockup-hotel .mh-left {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.55)),
+    linear-gradient(135deg, #3d2a1e 0%, #6b4a30 40%, #c5a572 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.mockup-hotel .mh-left::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(255,180,100,0.2), transparent 60%);
+}
+.mockup-hotel .mh-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.05;
+  font-weight: 400;
+  z-index: 1;
+}
+.mockup-hotel .mh-meta {
+  font-size: 5px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0.7; z-index: 1;
+}
+.mockup-hotel .mh-right {
+  display: grid; grid-template-rows: 1fr 1fr; gap: 8px;
+}
+.mockup-hotel .mh-tile {
+  background: linear-gradient(135deg, #2a1f18, #4a3628);
+  position: relative; overflow: hidden;
+}
+.mockup-hotel .mh-tile:first-child {
+  background: linear-gradient(135deg, #4a3020 0%, #8b5a35 70%);
+}
+.mockup-hotel .mh-tile::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(255,200,140,0.25), transparent 60%);
+}
+
+/* ---------- MOCKUP 2: E-commerce / fashion ---------- */
+.mockup-fashion {
+  background: #f2ede4;
+  position: absolute; inset: 28px 0 0 0;
+  color: #1a1512;
+  display: grid; grid-template-rows: auto 1fr;
+}
+.mockup-fashion .mf-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 16px;
+  font-size: 6px; letter-spacing: 0.2em; text-transform: uppercase;
+}
+.mockup-fashion .mf-nav .logo {
+  font-family: var(--font-display); font-size: 12px; font-weight: 500; letter-spacing: -0.01em;
+}
+.mockup-fashion .mf-body {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px;
+  background: #1a1512;
+}
+.mockup-fashion .mf-prod {
+  background: #d9cfc0;
+  position: relative;
+  padding: 12px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.mockup-fashion .mf-prod:nth-child(2) { background: #1a1512; color: #f2ede4; }
+.mockup-fashion .mf-prod:nth-child(3) { background: #a8957e; }
+.mockup-fashion .mf-prod .shape {
+  width: 100%; height: 70%;
+  background:
+    radial-gradient(ellipse at 50% 60%, rgba(0,0,0,0.08), transparent 65%);
+  position: relative;
+}
+.mockup-fashion .mf-prod:nth-child(1) .shape::after,
+.mockup-fashion .mf-prod:nth-child(3) .shape::after {
+  content: ""; position: absolute; left: 30%; top: 10%; width: 40%; height: 80%;
+  background: linear-gradient(180deg, #6b4530 20%, #3a2418 80%);
+  border-radius: 40% 40% 20% 20% / 30% 30% 12% 12%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.mockup-fashion .mf-prod:nth-child(2) .shape::after {
+  content: ""; position: absolute; left: 28%; top: 8%; width: 44%; height: 84%;
+  background: linear-gradient(180deg, #efe6dc 10%, #a8957e 90%);
+  border-radius: 42% 42% 20% 20% / 30% 30% 12% 12%;
+}
+.mockup-fashion .mf-prod .name {
+  font-size: 7px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.mockup-fashion .mf-prod .price {
+  font-family: var(--font-display); font-style: italic; font-size: 10px; opacity: 0.8;
+}
+
+/* ---------- MOCKUP 3: SaaS / analytics dashboard ---------- */
+.mockup-saas {
+  background: #0a0a14;
+  position: absolute; inset: 28px 0 0 0;
+  padding: 10px 14px;
+  color: #d8d2f0;
+  display: grid; grid-template-rows: auto auto 1fr; gap: 8px;
+}
+.mockup-saas .ms-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 6px; letter-spacing: 0.2em; text-transform: uppercase;
+  opacity: 0.7;
+}
+.mockup-saas .ms-nav .logo { font-family: var(--font-display); font-size: 11px; font-style: italic; opacity: 1; letter-spacing: 0; color: #fff; }
+.mockup-saas .ms-head {
+  font-family: var(--font-display);
+  font-size: 14px; line-height: 1.1; font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #fff;
+  max-width: 70%;
+}
+.mockup-saas .ms-head em { font-style: italic; color: #ffb4a5; font-weight: 300; }
+.mockup-saas .ms-chart {
+  background: linear-gradient(180deg, rgba(255,180,165,0.08), rgba(255,180,165,0));
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  padding: 8px;
+}
+.mockup-saas .ms-chart svg { width: 100%; height: 100%; }
+.mockup-saas .ms-stats { display: flex; gap: 8px; position: absolute; top: 8px; right: 8px; }
+.mockup-saas .ms-pill {
+  font-size: 5.5px; padding: 3px 7px;
+  background: rgba(255,180,165,0.15);
+  color: #ffb4a5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ---------- MOCKUP 4: Editorial magazine ---------- */
+.mockup-editorial {
+  background: #0e0e0e;
+  position: absolute; inset: 28px 0 0 0;
+  padding: 14px 18px;
+  color: #e5e2e1;
+  display: grid; grid-template-rows: auto 1fr; gap: 12px;
+}
+.mockup-editorial .me-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 6px; letter-spacing: 0.22em; text-transform: uppercase;
+  opacity: 0.7;
+}
+.mockup-editorial .me-nav .logo {
+  font-family: var(--font-display); font-size: 11px; font-weight: 500;
+  letter-spacing: -0.01em; opacity: 1;
+}
+.mockup-editorial .me-body {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  align-items: center;
+}
+.mockup-editorial .me-title {
+  font-family: var(--font-display);
+  font-size: 22px; line-height: 0.95;
+  letter-spacing: -0.02em; font-weight: 500;
+}
+.mockup-editorial .me-title em { font-style: italic; color: #ffb4a5; font-weight: 300; }
+.mockup-editorial .me-kicker {
+  font-size: 5.5px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: #ffb4a5;
+  margin-bottom: 8px;
+}
+.mockup-editorial .me-lede { font-size: 7px; line-height: 1.6; opacity: 0.7; margin-top: 10px; }
+.mockup-editorial .me-img {
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 40% 30%, rgba(255,180,165,0.3), transparent 55%),
+    linear-gradient(135deg, #2a1f18 0%, #4a3020 60%, #8b5a35 100%);
+  position: relative;
+  overflow: hidden;
+}
+.mockup-editorial .me-img::after {
+  content: ""; position: absolute; inset: 0;
+  box-shadow: inset 0 0 50px 10px rgba(14,14,14,0.5);
+}
+
+/* ---------- MOCKUP 5: Product / tech ---------- */
+.mockup-product {
+  background: linear-gradient(180deg, #1a0e08 0%, #0e0a06 100%);
+  position: absolute; inset: 28px 0 0 0;
+  padding: 12px 16px;
+  color: #e5e2e1;
+  display: grid; grid-template-rows: auto 1fr auto; gap: 10px;
+}
+.mockup-product .mp-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 6px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7;
+}
+.mockup-product .mp-hero {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: center;
+}
+.mockup-product .mp-title {
+  font-family: var(--font-display);
+  font-size: 18px; line-height: 1.0;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+.mockup-product .mp-title em { font-style: italic; color: #ffb4a5; font-weight: 300; }
+.mockup-product .mp-sub { font-size: 6px; line-height: 1.6; opacity: 0.65; margin-top: 6px; max-width: 90%; }
+.mockup-product .mp-visual {
+  aspect-ratio: 1/1;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,170,0,0.4) 0%, transparent 55%),
+    conic-gradient(from 45deg, #ff3d1a, #ffaa00, #ffb4a5, #ff3d1a);
+  border-radius: 50%;
+  filter: blur(0.5px);
+  position: relative;
+  box-shadow: 0 0 40px rgba(255,61,26,0.3);
+  justify-self: end;
+  width: 75%;
+}
+.mockup-product .mp-visual::after {
+  content: ""; position: absolute; inset: 12%;
+  background: #0e0a06;
+  border-radius: 50%;
+  box-shadow: inset 0 10px 20px rgba(255,180,165,0.2);
+}
+.mockup-product .mp-cta {
+  display: inline-flex; font-size: 6px; padding: 6px 12px;
+  background: linear-gradient(135deg, #FF3D1A, #FFAA00);
+  color: #1a0806; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
+  align-self: start; width: fit-content;
+}
+
+/* ---------- MOCKUP 6: Restaurant / hospitality ---------- */
+.mockup-restaurant {
+  background: #0e0e0e;
+  position: absolute; inset: 28px 0 0 0;
+  overflow: hidden;
+  color: #efe6dc;
+}
+.mockup-restaurant .mr-image {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.75) 100%),
+    radial-gradient(ellipse at 30% 40%, #6b3418 0%, #2a1510 70%, #0e0806 100%);
+}
+.mockup-restaurant .mr-image::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 35% 45%, rgba(255,170,50,0.35), transparent 45%);
+}
+.mockup-restaurant .mr-content {
+  position: absolute; inset: 0;
+  padding: 14px 18px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.mockup-restaurant .mr-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 6px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.7;
+}
+.mockup-restaurant .mr-nav .logo {
+  font-family: var(--font-display); font-size: 11px; opacity: 1; letter-spacing: 0;
+  font-style: italic;
+}
+.mockup-restaurant .mr-title {
+  font-family: var(--font-display);
+  font-size: 28px; line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  max-width: 70%;
+}
+.mockup-restaurant .mr-title em { font-style: italic; color: #ffcf90; font-weight: 300; }
+.mockup-restaurant .mr-meta {
+  display: flex; gap: 20px;
+  font-size: 5.5px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.7;
+  margin-top: 8px;
+}

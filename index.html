@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Orbidelta Studio — Digital Solutions</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Styles -->
+<link rel="stylesheet" href="/styles/tokens.css" />
+<link rel="stylesheet" href="/styles/sections.css" />
+<link rel="stylesheet" href="/styles/mockups.css" />
+  <style id="module-styles">
+  #site-cursor-glow {
+    position: fixed;
+    top: 0; left: 0;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    /* Soft beige/orange fade matching the site's accent */
+    background: radial-gradient(circle, rgba(255, 207, 144, 0.06) 0%, rgba(255, 61, 26, 0.02) 40%, transparent 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    mix-blend-mode: screen;
+    will-change: transform;
+  }
+  .creative-hover-card .card-overlay { transform: translateY(20px); opacity: 0; transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1); }
+  .creative-hover-card:hover .card-overlay { transform: translateY(0); opacity: 1; }
+  .creative-hover-card img, .video-card img, .scale-item img { transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease !important; }
+  .creative-hover-card:hover .bg-img { transform: scale(1.02); }
+  .video-card:hover .bg-img { transform: scale(1.02); opacity: 0.8 !important; }
+  .video-card:hover div { transform: scale(1.05); transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); }
+  .scale-item:hover img { transform: scale(1.02); }
+  .glass { background: rgba(229,226,225,0.03); border: 1px solid rgba(229,226,225,0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  .bento-hover { transition: transform 0.4s var(--ease-luxe), border-color 0.4s; }
+  .bento-hover:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.2) !important; }
+  .nav-links a { transition: transform 0.2s ease, opacity 0.2s ease; }
+  .nav-links a:active { transform: scale(0.95); opacity: 0.8; }
+  .lang-switch { display: flex; align-items: center; gap: 4px; margin-right: 16px; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 16px; }
+  .lang-btn { background: none; border: none; color: var(--on-surface-muted); font-family: var(--font-meta); font-size: 0.7rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 6px; }
+  .lang-btn:hover { color: var(--on-surface); }
+  .lang-btn.active { color: var(--primary); text-decoration: underline; text-underline-offset: 4px; opacity: 1; }
+  .lang-sep { color: var(--on-surface-muted); opacity: 0.3; font-size: 0.75rem; }
+  @media (max-width: 500px) {
+    .lang-switch { margin-right: 8px; padding-right: 8px; gap: 2px; }
+    .lang-btn { font-size: 0.65rem; padding: 4px; }
+  }
+  @media (max-width: 900px) {
+    .creative-grid > div { grid-column: span 12 !important; }
+    .ai-bento-grid > div { grid-column: span 12 !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAVIGATION ============ -->
+<nav id="site-nav">
+  <a href="#" class="brand">
+    <span class="brand-mark"></span>
+    Orbidelta<em>.</em>
+  </a>
+  <div class="nav-links">
+    <a href="#who-we-are" data-section="about" data-i18n="nav-about">About</a>
+    <a href="#website-building" data-section="website" data-i18n="nav-website">Website</a>
+    <a href="#creative-production" data-section="creative" data-i18n="nav-creative">Production</a>
+    <a href="#ai-agents" data-section="ai" data-i18n="nav-ai">AI Agents</a>
+  </div>
+  <div class="nav-actions" style="display: flex; align-items: center;">
+    <div class="lang-switch">
+       <button class="lang-btn" data-lang="pt">PT</button>
+       <span class="lang-sep">/</span>
+       <button class="lang-btn active" data-lang="en">EN</button>
+    </div>
+    <a target="_blank" href="https://wa.me/5511917882507?text=Ol%C3%A1!%20Gostaria%20de%20iniciar%20um%20projeto%20com%20a%20Orbidelta." class="nav-cta" data-i18n="nav-cta">Start a project</a>
+  </div>
+</nav>
+
+<div id="page-content">
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <canvas id="hero-canvas"></canvas>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow reveal" data-i18n="hero-eyebrow">
+      <span class="dot"></span>
+      Digital solutions studio
+    </div>
+
+    <h1 class="display-lg hero-title">
+      <span class="reveal" style="transition-delay:.1s" data-i18n="hero-title-1">We craft</span><br/>
+      <span class="reveal line-2" style="transition-delay:.25s" data-i18n="hero-title-2"><em>digital</em> ecosystems</span><br/>
+      <span class="reveal line-3" style="transition-delay:.4s" data-i18n="hero-title-3">that perform.</span>
+    </h1>
+
+    <div class="hero-meta-row reveal" style="transition-delay:.55s">
+      <p class="body" data-i18n="hero-desc">Websites, creative production, and intelligent AI agents — built for ambitious brands that refuse to settle for the ordinary.</p>
+      <div class="hero-actions">
+        <a target="_blank" href="https://wa.me/5511917882507?text=Ol%C3%A1!%20Tenho%20interesse%20em%20iniciar%20um%20projeto%20focado%20em%20ecossistemas%20digitais." class="btn btn-primary" data-i18n="hero-btn-1">Begin your project</a>
+        <a href="#website-building" class="btn btn-tertiary" data-i18n="hero-btn-2">View work</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-cue" data-i18n="hero-scroll">
+    <span class="line"></span>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- ============ WHO WE ARE ============ -->
+<section class="manifesto" id="who-we-are">
+  <div style="width: 1px; height: 80px; background: var(--outline-variant); margin: 0 auto 60px auto; opacity: 0.5;"></div>
+  <div class="bloom"></div>
+  <div class="manifesto-grid" style="grid-template-columns: 1fr; text-align: center;">
+    <div class="reveal" style="padding-top: 24px;">
+      <h3 class="display-lg" style="color: var(--primary); font-size: clamp(3rem, 6vw, 4.5rem); margin: 0; line-height: 1; margin-bottom: 32px;" data-i18n="about-label">Who We Are</h3>
+      <svg viewBox="0 0 90 60" fill="none" style="width: 120px; height: auto; margin: 0 auto; display: block;">
+        <path d="M0 30 Q15 0 30 30 T60 30 T90 30" stroke="var(--primary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <p class="manifesto-quote reveal" style="transition-delay:.15s; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; max-width: 900px; margin: 24px auto 0 auto; text-wrap: balance;" data-i18n="about-quote">
+        We are a performance advisory and creative aesthetics. We don't just build sites or run AI agents; we orchestrate <em>immersive digital ecosystems</em> that capture attention and drive real results.
+      </p>
+      <p class="body manifesto-attr reveal" style="transition-delay:.3s; font-size: clamp(1.1rem, 1.5vw, 1.3rem); margin-top: 32px; color: var(--text-sec); max-width: 700px; margin-left: auto; margin-right: auto; text-wrap: balance;" data-i18n="about-attr">
+        Data-driven, powered by visual excellence, and entirely focused on scaling your business.
+      </p>
+    </div>
+  </div>
+  <div style="width: 1px; height: 80px; background: var(--outline-variant); margin: 80px auto -80px auto; opacity: 0.5;"></div>
+</section>
+
+<!-- ============ MODULE 1: WEBSITE BUILDING ============ -->
+<section class="services" id="website-building" style="background: var(--surface-dim); padding-top: 140px;">
+  <div class="section-head" style="grid-template-columns: 1fr; gap: 24px; margin-bottom: 80px;">
+    <div class="head-meta" style="justify-content: flex-start; margin-bottom: 8px;">
+      <h3 class="display-lg reveal" style="color: var(--primary); font-size: clamp(3rem, 6vw, 4.5rem); margin: 0; line-height: 1;" data-i18n="web-what">What We Do</h3>
+    </div>
+    <div class="reveal" style="transition-delay:.1s; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 32px;">
+        <h2 class="display-md" style="margin: 0; text-align: left;" data-i18n="web-title">Website <em>Building</em></h2>
+        <div style="max-width: 800px; padding-left: 24px; border-left: 1px solid var(--primary);">
+          <p class="body" style="font-size: 1.1rem; margin: 0 0 24px 0; text-align: left; color: var(--on-surface); text-wrap: balance;" data-i18n="web-desc">Bespoke, conversion-optimized ecosystems that fuse editorial design with performance engineering. We do more than build websites; we architect digital authorities and scale agency infrastructures that dominate their niches.</p>
+          <a target="_blank" href="https://wa.me/5511917882507?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20constru%C3%A7%C3%A3o%20de%20websites%20e%20ecossistemas%20sob%20medida." class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;" data-i18n="web-cta">Start your website build</a>
+        </div>
+    </div>
+  </div>
+
+  <div class="wrap" style="display: flex; flex-direction: column; gap: clamp(80px, 12vw, 160px);">
+    <div class="label reveal" style="text-align: center; margin-bottom: -40px; color: var(--text-sec);" data-i18n="web-portfolio-hint">Selected Works ↓</div>
+    <!-- Portfolio 1 -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: clamp(40px, 6vw, 80px); align-items: center;" class="reveal">
+        <div style="aspect-ratio: 16/10; border-radius: 4px; overflow: hidden; position: relative;" class="scale-item">
+           <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=100&w=3840&auto=format&fit=crop" alt="Vanguard Studios" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85);"/>
+        </div>
+        <div>
+           <h3 class="headline" data-i18n="web-p1-title">Vanguard Studios</h3>
+           <p class="body" style="margin: 24px 0; text-wrap: balance;" data-i18n="web-p1-desc">Flawless minimalist design focused on self-guided exploration, turning casual visitors into warmed-up prospects ready to convert.</p>
+           <span class="label" style="opacity: 0.6;">Strategy · UI/UX · WebGL</span>
+        </div>
+    </div>
+    <!-- Portfolio 2 -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: clamp(40px, 6vw, 80px); align-items: center;" class="reveal">
+        <div style="aspect-ratio: 16/10; border-radius: 4px; overflow: hidden; position: relative; order: 2;" class="scale-item">
+           <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=100&w=3840&auto=format&fit=crop" alt="Lumière Estates" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85);"/>
+        </div>
+        <div style="order: 1;">
+           <h3 class="headline" data-i18n="web-p2-title">Lumière Estates</h3>
+           <p class="body" style="margin: 24px 0; text-wrap: balance;" data-i18n="web-p2-desc">Hyper-optimized real estate platform. Elegant interfaces for high-end properties integrated with instant global search systems.</p>
+           <span class="label" style="opacity: 0.6;">Branding · Next.js · Motion</span>
+        </div>
+    </div>
+    <!-- Portfolio 3 -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: clamp(40px, 6vw, 80px); align-items: center;" class="reveal">
+        <div style="aspect-ratio: 16/10; border-radius: 4px; overflow: hidden; position: relative;" class="scale-item">
+           <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=100&w=3840&auto=format&fit=crop" alt="Onyx Health" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85);"/>
+        </div>
+        <div>
+           <h3 class="headline" data-i18n="web-p3-title">Onyx Health</h3>
+           <p class="body" style="margin: 24px 0; text-wrap: balance;" data-i18n="web-p3-desc">Conversion-focused interactive hub for performance telemedicine and supplementation, integrating e-commerce and D2C subscriptions.</p>
+           <span class="label" style="opacity: 0.6;">Vue.js · Nuxt · Performance</span>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODULE 2: CREATIVE PRODUCTION ============ -->
+<section class="portfolio" id="creative-production" style="padding-top: 140px;">
+  <div class="section-head" style="grid-template-columns: 1fr; gap: 16px; margin-bottom: 80px;">
+    <div class="head-meta" style="justify-content: flex-start; margin-bottom: 8px;">
+      <span class="label reveal" style="color: var(--secondary);" data-i18n="creative-label">Creative</span>
+    </div>
+    <div class="reveal" style="transition-delay:.1s; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: flex-start; gap: 32px;">
+        <h2 class="display-md" style="margin: 0; text-align: left;" data-i18n="creative-title">Creative <em>Production</em></h2>
+        <div style="max-width: 580px; padding-left: 24px; border-left: 1px solid var(--secondary);">
+          <p class="body" style="font-size: 0.95rem; margin: 0 0 24px 0; text-align: left; color: var(--text-sec); text-wrap: balance;" data-i18n="creative-desc">Visual identity, motion design, and cinematic narratives. Our creative production establishes a visual standard where most settle for basics.</p>
+          <a target="_blank" href="https://wa.me/5511917882507?text=Ol%C3%A1!%20Quero%20elevar%20o%20n%C3%ADvel%20da%20minha%20marca%20com%20o%20servi%C3%A7o%20de%20Produ%C3%A7%C3%A3o%20Criativa." class="btn btn-primary" style="display: inline-block; padding: 10px 24px; font-size: 0.9rem;" data-i18n="creative-cta">Elevate your brand</a>
+        </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+      <div class="label reveal" style="text-align: center; margin-bottom: 40px; color: var(--text-sec);" data-i18n="creative-portfolio-hint">Selected Works ↓</div>
+      <!-- Image grid -->
+      <div class="creative-grid" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(24px, 4vw, 40px); grid-auto-flow: dense;">
+          <!-- Card 1 -->
+          <div style="grid-column: span 12; aspect-ratio: 21/9; position: relative; border-radius: 4px; overflow: hidden;" class="reveal creative-hover-card">
+              <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=100&w=3840&auto=format&fit=crop" alt="Brand Strategy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease-luxe);" class="bg-img" />
+              <div class="card-overlay" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(14,14,14,0.95) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(32px, 5vw, 64px);">
+                 <h4 class="headline" style="font-size: 2rem;" data-i18n="creative-c1-title">Brand Strategy</h4>
+                 <p class="body" style="margin-top: 8px; color: var(--on-surface-dim);" data-i18n="creative-c1-desc">Rebranding and visual foundations</p>
+              </div>
+          </div>
+          
+          <!-- Card 2 (Video) -->
+          <div style="grid-column: span 7; aspect-ratio: 16/10; background: var(--container-low); border-radius: 4px; position: relative; display: flex; align-items: center; justify-content: center; cursor: pointer; overflow: hidden;" class="reveal video-card" style="transition-delay:.15s">
+            <img class="bg-img" src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=1200" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity: 0.5; transition: opacity 0.6s var(--ease-luxe), transform 1s var(--ease-luxe); filter: saturate(0);"/>
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(229,226,225,0.05); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; border: 1px solid rgba(229,226,225,0.15);">
+                <span style="display: block; width: 0; height: 0; border-top: 8px solid transparent; border-left: 12px solid var(--on-surface); border-bottom: 8px solid transparent; margin-left: 4px;"></span>
+            </div>
+            <div class="card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(0deg, rgba(14,14,14,0.9) 0%, transparent 100%); padding: 32px; z-index: 1;">
+                 <h4 class="headline" style="font-size: 1.2rem;" data-i18n="creative-c2-title">Motion Identity</h4>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div style="grid-column: span 5; aspect-ratio: 4/5; position: relative; border-radius: 4px; overflow: hidden;" class="reveal creative-hover-card" style="transition-delay:.3s">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=100&w=3840&auto=format&fit=crop" alt="3D and Motion" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease-luxe);" class="bg-img" />
+              <div class="card-overlay" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(14,14,14,0.95) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(24px, 4vw, 40px);">
+                 <h4 class="headline" style="font-size: 1.5rem;" data-i18n="creative-c3-title">3D & Motion</h4>
+                 <p class="body" style="margin-top: 8px; color: var(--on-surface-dim);" data-i18n="creative-c3-desc">Animation and interactive showcases</p>
+              </div>
+          </div>
+          
+          <!-- Card 4 (Video) -->
+          <div style="grid-column: span 5; aspect-ratio: 4/5; background: var(--container-low); border-radius: 4px; position: relative; display: flex; align-items: center; justify-content: center; cursor: pointer; overflow: hidden;" class="reveal video-card">
+            <img class="bg-img" src="https://images.unsplash.com/photo-1594122230689-45899d9e6f69?q=100&w=3840&auto=format&fit=crop" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity: 0.5; transition: opacity 0.6s var(--ease-luxe), transform 1s var(--ease-luxe); filter: saturate(0);"/>
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(229,226,225,0.05); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; border: 1px solid rgba(229,226,225,0.15);">
+                <span style="display: block; width: 0; height: 0; border-top: 8px solid transparent; border-left: 12px solid var(--on-surface); border-bottom: 8px solid transparent; margin-left: 4px;"></span>
+            </div>
+            <div class="card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(0deg, rgba(14,14,14,0.9) 0%, transparent 100%); padding: 32px; z-index: 1;">
+                 <h4 class="headline" style="font-size: 1.2rem;" data-i18n="creative-c4-title">Commercial Reel</h4>
+            </div>
+          </div>
+          
+          <!-- Card 5 -->
+          <div style="grid-column: span 7; aspect-ratio: 16/10; position: relative; border-radius: 4px; overflow: hidden;" class="reveal creative-hover-card" style="transition-delay:.15s">
+              <img src="https://images.unsplash.com/photo-1516961642265-531546e84af2?q=100&w=3840&auto=format&fit=crop" alt="Campaign Lore" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease-luxe);" class="bg-img" />
+              <div class="card-overlay" style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(14,14,14,0.95) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(24px, 4vw, 40px);">
+                 <h4 class="headline" style="font-size: 1.5rem;" data-i18n="creative-c5-title">Campaign Lore</h4>
+                 <p class="body" style="margin-top: 8px; color: var(--on-surface-dim);" data-i18n="creative-c5-desc">Photography and art direction</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- ============ MODULE 3: AI AGENTS ============ -->
+<section class="services" id="ai-agents" style="background: var(--surface-dim); padding-top: 140px;">
+  <div class="section-head" style="grid-template-columns: 1fr; gap: 16px; margin-bottom: 80px;">
+    <div class="head-meta" style="justify-content: flex-start; margin-bottom: 8px;">
+      <span class="label reveal" style="color: var(--secondary);" data-i18n="traffic-label">AI Infrastructure</span>
+    </div>
+    <div class="reveal" style="transition-delay:.1s; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: flex-start; gap: 32px;">
+        <h2 class="display-md" style="margin: 0; text-align: left;" data-i18n="traffic-title">AI Agent<br/><em>Development</em></h2>
+        <div style="max-width: 500px; padding-left: 24px; border-left: 1px solid var(--secondary);">
+          <p class="body" style="font-size: 0.95rem; margin: 0 0 24px 0; text-align: left; color: var(--text-sec); text-wrap: balance;" data-i18n="traffic-desc">We build and deploy autonomous AI agents. From 24/7 elite client acquisition to operational fulfillment architectures, we engineer intelligent systems that scale your operations without scaling your headcount.</p>
+          <a target="_blank" href="https://wa.me/5511917882507?text=Ol%C3%A1!%20Gostaria%20de%20implementar%20Agentes%20de%20IA%20aut%C3%B4nomos%20na%20minha%20opera%C3%A7%C3%A3o." class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;" data-i18n="ai-cta">Deploy your AI agent</a>
+        </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+      <div class="ai-bento-grid" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(16px, 2vw, 24px);">
+          <!-- Stat Banner 1 -->
+          <div style="grid-column: 1 / -1; background: var(--surface-lowest); border: 1px solid var(--outline-variant); padding: clamp(32px, 5vw, 64px); border-radius: 4px; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; overflow:hidden; position:relative; gap: 32px;" class="reveal bento-hover">
+              <div style="position: relative; z-index: 2;">
+                  <div class="display-md reveal" style="color: #ffffff; font-family: var(--font-display); font-size: clamp(3.5rem, 6vw, 5rem); margin-bottom: 8px;">+<span class="counter" data-target="340">0</span>k</div>
+                  <div class="label" style="opacity: 0.9;" data-i18n="traffic-s1">Tasks Automated/mo</div>
+              </div>
+          </div>
+          
+          <div style="background: var(--surface-lowest); border: 1px solid var(--outline-variant); padding: clamp(32px, 5vw, 48px); border-radius: 4px; grid-column: span 5 / span 5;" class="reveal bento-hover">
+              <div class="display-md reveal" style="color: #ffffff; font-family: var(--font-display); font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 8px;" style="transition-delay:.15s"><span class="counter" data-target="120">0</span></div>
+              <div class="label" style="opacity: 0.7;" data-i18n="traffic-s2">Operational Hours Saved/mo</div>
+          </div>
+          
+          <div style="background: var(--surface-lowest); border: 1px solid var(--outline-variant); padding: clamp(32px, 5vw, 48px); border-radius: 4px; grid-column: span 7 / span 7;" class="reveal bento-hover" style="transition-delay:.1s">
+              <div class="display-md reveal" style="color: #ffffff; font-family: var(--font-display); font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 8px;" style="transition-delay:.25s"><span class="counter" data-target="92">0</span>%</div>
+              <div class="label" style="opacity: 0.7;" data-i18n="traffic-s3">Client Retention Rate</div>
+          </div>
+
+          <div style="background: var(--surface-lowest); border: 1px solid var(--outline-variant); padding: clamp(32px, 5vw, 48px); border-radius: 4px; grid-column: span 6 / span 6;" class="reveal bento-hover" style="transition-delay:.2s">
+              <div class="display-md reveal" style="color: #ffffff; font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 8px;" style="transition-delay:.35s">+<span class="counter float-counter" data-target="65">0</span>%</div>
+              <div class="label" style="opacity: 0.7;" data-i18n="traffic-s4">Profit Margin Growth</div>
+          </div>
+
+          <div style="background: var(--surface-lowest); border: 1px solid var(--outline-variant); padding: clamp(32px, 5vw, 48px); border-radius: 4px; grid-column: span 6 / span 6;" class="reveal bento-hover" style="transition-delay:.3s">
+              <div class="display-md reveal" style="color: #ffffff; font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 8px;" style="transition-delay:.45s"><span class="counter" data-target="15">0</span>+</div>
+              <div class="label" style="opacity: 0.7;" data-i18n="traffic-s5">Agencies Scaled</div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="cta" style="padding: clamp(80px, 15vh, 160px) 0; text-align: center;">
+  <div class="bloom" style="left: 50%; top: 50%; transform: translate(-50%, -50%); opacity: 0.3;"></div>
+  <div class="cta-inner" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; z-index: 2;">
+    <h2 class="reveal display-md" style="font-size: clamp(3rem, 6vw, 5rem); line-height: 1.1;" data-i18n="cta-title">Let's build<br/>something <em>remarkable</em>.</h2>
+    <p class="body cta-sub reveal" style="transition-delay:.15s; font-size: clamp(1.1rem, 2vw, 1.25rem); color: var(--text-sec); max-width: 600px; margin: 32px auto 48px;" data-i18n="cta-desc">Every great project starts with a conversation. Tell us what you're envisioning — we'll show you what's possible.</p>
+    <div class="cta-actions reveal" style="transition-delay:.3s; display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; align-items: center;">
+      <a target="_blank" href="https://wa.me/5511917882507?text=Ol%C3%A1!%20Vamos%20construir%20algo%20incr%C3%ADvel%20juntos.%20Gostaria%20de%20conversar%20sobre%20um%20novo%20projeto." class="btn btn-primary" style="padding: 16px 40px; font-size: 1.1rem;" data-i18n="cta-btn">Start a conversation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">Orbidelta<em>.</em></div>
+      <p class="body" style="max-width:36ch;opacity:.7" data-i18n="foot-desc">Digital solutions crafting premium web experiences.</p>
+    </div>
+    <div class="foot-col">
+      <h5 data-i18n="foot-col1-title">Services</h5>
+      <ul>
+        <li><a href="#" data-i18n="foot-col1-l1">Website Building</a></li>
+        <li><a href="#" data-i18n="foot-col1-l2">Creative Production</a></li>
+        <li><a href="#" data-i18n="foot-col1-l3">AI Agents</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Orbidelta</span>
+    <span>São Paulo · New York · London</span>
+  </div>
+</footer>
+</div>
+
+<!-- ============ SCRIPTS ============ -->
+<div id="site-cursor-glow"></div>
+<script>
+  const cursorGlow = document.getElementById('site-cursor-glow');
+  let glowMouseX = window.innerWidth / 2;
+  let glowMouseY = window.innerHeight / 2;
+  let glowX = glowMouseX;
+  let glowY = glowMouseY;
+
+  window.addEventListener('mousemove', (e) => {
+    glowMouseX = e.clientX;
+    glowMouseY = e.clientY;
+  });
+
+  function smoothGlow() {
+    glowX += (glowMouseX - glowX) * 0.1;
+    glowY += (glowMouseY - glowY) * 0.1;
+    cursorGlow.style.transform = `translate(calc(${glowX}px - 50%), calc(${glowY}px - 50%))`;
+    requestAnimationFrame(smoothGlow);
+  }
+  requestAnimationFrame(smoothGlow);
+</script>
+<script src="/scripts/i18n.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/scripts/hero3d.js"></script>
+<script src="/scripts/site.js"></script>
+<script src="/scripts/counters.js"></script>
+
+</body>
+</html>
