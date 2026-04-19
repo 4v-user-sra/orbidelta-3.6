@@ -196,13 +196,12 @@ function setLanguage(lang) {
   }, 500); // Wait for the fade out to finish
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      setLanguage(e.target.dataset.lang);
-    });
+// Initialize on load
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    setLanguage(e.target.dataset.lang);
   });
-  // Initialize
-  setLanguage(currentLang);
 });
+// Initialize
+setLanguage(currentLang);
